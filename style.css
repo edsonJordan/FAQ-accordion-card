@@ -30,6 +30,7 @@
 }
 .card{
     display: flex;  
+   
     border-radius: 1.5rem;
     position: relative;
     margin: 10rem  auto;
@@ -44,6 +45,7 @@
 box-shadow: 0px 25px 23px -5px rgba(0,0,0,0.39);
 }
 .title::before{
+    z-index: 99;
     display: block;
     position: relative;
     top: -2rem;
@@ -62,6 +64,8 @@ box-shadow: 0px 25px 23px -5px rgba(0,0,0,0.39);
     position: relative;
     top: -6rem;
     text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
 }
 .card-content{
     position: relative;
@@ -70,7 +74,6 @@ box-shadow: 0px 25px 23px -5px rgba(0,0,0,0.39);
     flex-direction: column;
     /* align-items: center; */
 }
-
 details summary::-webkit-details-marker {
     display:none;
 }
@@ -102,3 +105,73 @@ details summary::after{
 details[open] summary::after {
     transform: rotate(180deg);
 }
+/* 1440 */
+/* 880 */
+@media (min-width:880px){
+    .title::after,.title::before{
+     display: none;
+    }    
+    .content-img{                
+    
+    }
+    .card{
+        flex-direction: row;
+        padding: initial;               
+    }
+    .content{
+        display: flex;
+        flex-direction:row;
+    }
+    .card-content, .title{ 
+        top: initial;               
+    }
+    .title{
+        text-align:left;
+    }
+    .content-img{
+        width: 50%;
+    }
+    .text-card{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+    }
+    .card-content,.title{
+        margin: 0 auto 0 0;
+        
+        width: 80%;
+    }
+    .title{
+        padding:5rem 1rem 0rem 2rem;
+    }
+    .card-content{
+        padding: 2rem;
+    }
+    .content-img{
+        background-image: url(faq-accordion-card-main/images/illustration-woman-online-desktop.svg), url(faq-accordion-card-main/images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 30rem, 50rem ;
+        background-position-y:2rem, -12rem;
+        background-position-x:-5rem, -25rem;
+        /* background-position-y: -7rem;
+        background-position-x: -7rem; */
+    }
+    .content-img::after{
+        display: block;
+        position: absolute;
+        content: url(faq-accordion-card-main/images/illustration-box-desktop.svg);
+        object-fit: contain;
+        top: 12rem;
+        left: -8.5rem;
+        z-index: 99;
+    }
+    details summary{
+        cursor: pointer;
+        
+    }   
+    details summary:hover{
+        color: var(--text-soft-red);
+    }
+   
+    
+ }
