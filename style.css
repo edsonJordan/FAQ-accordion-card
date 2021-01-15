@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    /* Colors */
+    /* Primary */
+    --text-very-dark: hsl(238, 29%, 16%);
+    --text-soft-red: hsl(14, 88%, 65%);
+    /* Neutral */
+    --text-very-dark-grayish-blue:hsl(237, 12%, 33%);
+    --text-dark-grayish-blue:hsl(240, 6%, 50%);
+    /* Gradient */
+    --gradient-soft-violet: hsl(273, 75%, 66%);
+    --gradient-soft-blue: hsl(240, 73%, 65%);
+    /* Dividers */
+    --light-grayish-blue:hsl(240, 5%, 91%);
+}
+.container{    
+    width: 100%;
+}
+.content{
+    display: flex;
+    width: 100%;
+   
+    object-fit: contain;
+    background-image: linear-gradient(360deg, var(--gradient-soft-blue) 20%, var(--gradient-soft-violet) 100%);
+  /*   justify-content: center;    
+    align-items: center; */
+}
+.card{
+    display: flex;  
+    border-radius: 1.5rem;
+    position: relative;
+    margin: 10rem  auto;
+    height: 450px;
+    flex-direction: column;    
+    column-gap: 2rem;
+    background-color: white;    
+    width: 70%;
+    padding: 1.5rem;    
+    -webkit-box-shadow: 0px 25px 23px -5px rgba(0,0,0,0.39);
+-moz-box-shadow: 0px 25px 23px -5px rgba(0,0,0,0.39);
+box-shadow: 0px 25px 23px -5px rgba(0,0,0,0.39);
+}
+.title::before{
+    display: block;
+    position: relative;
+    top: -2rem;
+    content: url(faq-accordion-card-main/images/illustration-woman-online-mobile.svg);
+    left: -1.5rem;
+    object-fit: contain;
+}
+.title::after{
+    display: block;
+    position: relative;
+    top: -10.2rem;        
+    content: url(faq-accordion-card-main/images/bg-pattern-mobile.svg);
+    object-fit: contain;
+}
+.title{
+    position: relative;
+    top: -6rem;
+    text-align: center;
+}
+.card-content{
+    position: relative;
+    top: -11rem;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+details summary::-webkit-details-marker {
+    display:none;
+}
+details{    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--text-very-dark-grayish-blue);
+    font-size: 12px;
+}
+summary{
+    outline:none;  
+    font-weight: 700;
+    padding: .7rem 0;
+    color: var(--text-very-dark);    
+}
+details p{
+    padding: .7rem 0;
+}
+details summary::after{
+    content: url(faq-accordion-card-main/images/icon-arrow-down.svg);
+    width: 12px;
+    height: 12px;
+  /*   border-right: 2px solid red;
+    border-bottom: 2px solid red;
+    transform: rotate(-50deg); */
+    float: right;
+    display:inline-block;    
+}
+details[open] summary::after {
+    transform: rotate(180deg);
+}
